@@ -3,7 +3,7 @@ import MovieList from '../MovieList/MovieList.js'
 function Home() {
     const [moviesArr, setMoviesArr] = useState([]);
     const sendReq = async () => {
-        const serverURL = `[::1]:3004/trending`;
+        const serverURL = `https://movies-library-coral.vercel.app/trending`;
         const response = await fetch(serverURL);
         const data = await response.json();
         setMoviesArr(data);
@@ -13,12 +13,12 @@ function Home() {
         sendReq();
     })
     return (
-        <>
-            <MovieList movies={moviesArr} />
+        <div className="home">
+            < MovieList movies={moviesArr} />
 
 
 
-        </>
+        </div>
     )
 }
 

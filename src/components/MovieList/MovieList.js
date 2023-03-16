@@ -6,7 +6,7 @@ export default function MovieList(props) {
             {props.movies.map((item) => {
                 return (
                     <div>
-                        <Movie movielist={item} />
+                        <Movie key={item.id} movielist={item} />
                     </div>
                 )
             })}
