@@ -51,7 +51,7 @@ function ModalMovie(props) {
                         <Button variant="secondary" onClick={props.handleclose} >Close</Button>
                         <Button variant="primary" onClick={() => {
                             fetchRes();
-
+                            props.handleclose();
                         }}>add favorite</Button>
                     </Modal.Footer>
                 </Modal.Dialog>
