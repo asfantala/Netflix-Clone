@@ -11,7 +11,7 @@ function Home() {
 
     useEffect(() => {
         sendReq();
-    })
+    },[])
     return (
         <div className="home">
             < MovieList movies={moviesArr} />
