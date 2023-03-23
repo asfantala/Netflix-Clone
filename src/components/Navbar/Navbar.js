@@ -1,22 +1,27 @@
 import Container from 'react-bootstrap/Container';
+import { Link } from "react-router-dom";
+import './Navbar.css'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-function NavbarFunction (){
+function NavbarFunction() {
 
-    return(
-        <>
-        <Navbar bg="dark" variant="dark">
+  return (
+    <>
+      <Navbar bg="dark" variant="dark">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Link to='/' >Home</Link>
+
+            <Link to='/FavoriteList'>Favorite List</Link>
+
           </Nav>
         </Container>
       </Navbar>
-      
-      </>
-      
-      
-    )
+
+    </>
+
+
+  )
 }
 
 export default NavbarFunction;
