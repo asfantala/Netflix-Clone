@@ -5,12 +5,9 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 
 export default function FavModal(props) {
-      const [showFlag, setShowFlag] = useState(false);
 
   const [comment, setComment] = useState('');
-  const handleclose = () => {
-    setShowFlag(false);
-  }
+  
 
 
   function handleCommentChange(event) {
