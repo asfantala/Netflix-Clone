@@ -19,13 +19,16 @@ function Movie(props) {
   const handleclose = () => {
     setShowFlag(false);
   }
+  const style = { width: '18rem'};
+
   return (
+    <Row xs={1} md={3} className="g-4">
+
+    <Col >
 
     <div key={props.movielist.id} className='col'>
-      <Row xs={1} md={2} className="g-4">
-        <Col style={{ width: '50%' }} >
-          <Card>
-            <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500${props.movielist.poster_path} `} />
+          <Card style={{ ...style}}>
+            <Card.Img variant="top" src={props.movielist.poster_path ? `https://image.tmdb.org/t/p/w500${props.movielist.poster_path}` : "https://via.placeholder.com/500x750"} />
             <Card.Body>
               <Card.Title>{props.movielist.title}</Card.Title>
               <Card.Text>
@@ -35,13 +38,13 @@ function Movie(props) {
 
             </Card.Body>
           </Card>
-        </Col>
-      </Row>
 
 
       <ModalMovie showFlag={showFlag} handleclose={handleclose} Movie={clickedMovie} />
 
     </div>
+    </Col>
+</Row>
   );
 }
 

@@ -19,13 +19,15 @@ function ModalMovie(props) {
         comment: addFeedback
     }
     const fetchRes = async () => {
-        await fetch('https://movies-library-coral.vercel.app/getMovies', {
+        await fetch('https://movies-library-coral.vercel.app/addMovies', {
 
             method: 'POST',
             body: JSON.stringify(
 
                 dataToSend
-            )
+            ),headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            }
         })
     }
 
@@ -43,7 +45,7 @@ function ModalMovie(props) {
 
                     <Modal.Body>
                         <Image height={'560px'} src={`https://image.tmdb.org/t/p/w500${props.Movie.poster_path}`} width='100%'></Image>
-                        <textarea onChange={handleCommentChange} placeholder="Add a comment"></textarea>
+                        <textarea onChange={handleCommentChange}  defaultValue="comment"></textarea>
 
                     </Modal.Body>
 
